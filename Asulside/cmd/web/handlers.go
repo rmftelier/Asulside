@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"net/http"
 	"strconv"
+  "html/template"
+  "log"
 )
 
 func home(rw http.ResponseWriter, r *http.Request){
@@ -11,7 +13,26 @@ func home(rw http.ResponseWriter, r *http.Request){
     http.NotFound(rw, r)
     return
   } 
-  rw.Write([]byte("Bem vindo ao Asulside"))
+  
+
+  files := []string{
+       "./ui/html/home.html",
+       "./ui/html/editor.html",
+       "./ui/html/blog.html",
+  }
+
+  ts, err := template.ParseFiles(files...)
+  if err != nil{
+      log.Println(err.Error())
+      http.Error(rw, "Internal Error", 500)
+     return
+  }
+  err = ts.Execute(rw, nil)
+  if err != nil{
+       log.Println(err.Error())
+       http.Error(rw, "Internal Error", 500)
+       return
+  }
 }
 
 //http://localhost:4000/snippet?id=123
