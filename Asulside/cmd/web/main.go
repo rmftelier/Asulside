@@ -24,26 +24,22 @@ func main() {
   errorLog := log.New(os.Stderr, "ERRO:\t", log.Ldate|log.Ltime|log.Lshortfile)
 
 
-//application
-app := &application{
-    errorLog: errorLog,
-    infoLog: infoLog,
-}
+    //applicação
+    app := &application{
+        errorLog: errorLog,
+        infoLog: infoLog,
+    }
 
-  //conexão ao servidor
-	mux := http.NewServeMux()
-
-  mux.HandleFunc("/", app.home)
-  mux.HandleFunc("/blog", app.showBlog)
-  mux.HandleFunc("/editor", app.createBlog)
-
-  //
-  fileServer := http.FileServer(http.Dir("./ui/static/"))
-  mux.Handle("/static/", http.StripPrefix("/static", fileServer))
+    //servidor
+    srv := &http.Server{
+        Addr: *addr,
+        ErrorLog: errorLog, 
+        Handler: app.routes(),
+    }
 
 
   infoLog.Printf("Inicializando o servidor na porta %s\n", *addr)
   
-  err := http.ListenAndServe(*addr, mux) 
+  err := srv.ListenAndServe() 
   errorLog.Fatal(err)
 }
