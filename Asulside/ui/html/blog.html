@@ -4,14 +4,16 @@
      <meta charset="UTF-8">
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Blog :  </title>
+
+    {{define "title"}} Blog {{.ID}} {{end}}
+    <!-- <title>Blog :  </title> -->
     
      <link rel="stylesheet" href="../static/css/home.css">
      <link rel="stylesheet" href="../static/css/editor.css">
      <link rel="stylesheet" href="../static/css/blog.css">
 
 </head>
-<body>
+{{define "body"}}
   <nav class="navbar"> 
     <img src="../static/img/logo.png" class="logo" alt="">
     <ul class="links-container">
@@ -23,18 +25,18 @@
   <div class="banner"></div>
 
   <div class="blog">
-      <h1 class="title">Blog Title...</h1>
+      <h1 class="title">{{.Title}}</h1>
       <p class="published"><span>published at - </span></p>
-      <div class="article">
 
-      </div>
+     <p class = "published"><time>Published at - {{.PublishedAt}}</time></p>
+      <div class="article"> {{.Article}} </div>
   </div>
    
   <h1 class="sub-heading">Read more</h1>
   
   <!--- blog section -->
   <section class="blogs-section"></section>
-</body>
+{{end}}
 </html>
 
 
