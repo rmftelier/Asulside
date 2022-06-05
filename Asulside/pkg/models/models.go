@@ -13,6 +13,5 @@ type Blog struct{
     ID int
     Title string
     Article string 
-    BannerImage string
     PublishedAt time.Time
 }

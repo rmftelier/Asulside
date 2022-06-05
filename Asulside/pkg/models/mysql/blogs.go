@@ -13,13 +13,13 @@ type BlogModel struct{
 }
 
 //Função para Inserir um Blog 
-func(m *BlogModel)Insert(title, article, bannerImage string) (int, error){
+func(m *BlogModel)Insert(title, article string) (int, error){
 
-  stmt := `INSERT INTO blogs(title, article, bannerImage, publishedAt)
+  stmt := `INSERT INTO blogs (title, article, publishedAt)
 
-    VALUES(?, ?, ?, UTC_TIMESTAMP())`
+    VALUES(?, ?, UTC_TIMESTAMP())`
 
-  result, err := m.DB.Exec(stmt, title, article, bannerImage)
+  result, err := m.DB.Exec(stmt, title, article)
   if err != nil{
      return 0, err
   }
@@ -36,7 +36,7 @@ func(m *BlogModel)Insert(title, article, bannerImage string) (int, error){
 
 //Função para Pegar um Blog específico 
 func(m *BlogModel) Get(id int)(*models.Blog, error){
-    stmt := `SELECT id, title, article, bannerImage, publishedAt FROM blogs
+    stmt := `SELECT id, title, article, publishedAt FROM blogs
   
     WHERE id = ?`
 
@@ -44,7 +44,7 @@ func(m *BlogModel) Get(id int)(*models.Blog, error){
 
     b := &models.Blog{}
 
-    err := row.Scan(&b.ID, &b.Title, &b.Article, &b.BannerImage, &b.PublishedAt)
+    err := row.Scan(&b.ID, &b.Title, &b.Article, &b.PublishedAt)
 
     if err == sql.ErrNoRows{
         return nil, models.ErrNoRecord
@@ -58,7 +58,7 @@ func(m *BlogModel) Get(id int)(*models.Blog, error){
 //Função para pegar os últimos blogs postados
 func(m *BlogModel) Latest()([]*models.Blog, error){
     
-  stmt := `SELECT id, title, article, bannerImage, publishedAt FROM blogs 
+  stmt := `SELECT id, title, article, publishedAt FROM blogs 
     ORDER BY publishedAt DESC LIMIT 10`
 
     rows, err := m.DB.Query(stmt)
@@ -70,7 +70,7 @@ func(m *BlogModel) Latest()([]*models.Blog, error){
     blogs := []*models.Blog{}
     for rows.Next(){
         b := &models.Blog{}
-        err = rows.Scan(&b.ID, &b.Title, &b.Article, &b.BannerImage, &b.PublishedAt)
+        err = rows.Scan(&b.ID, &b.Title, &b.Article, &b.PublishedAt)
         if err != nil{
             return nil, err
         }

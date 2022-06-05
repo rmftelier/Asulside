@@ -36,8 +36,16 @@
        </header>
 
        <!--- blog section -->
-       <section class="blogs-section"></section>
+      <section class="blogs-section">
+      {{range .}}
+        <div class="blog-card">
+            <h1 class="blog-title">{{.Title}}</h1>
+            <p class="blog-overview">{{.Article}}</p>
+            <a href="/blog?id={{.ID}}" class="btn dark">read</a>
+        </div> 
+        {{end}}
 
-  
+    </section>
+ 
 </body>
 </html>
