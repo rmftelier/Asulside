@@ -73,12 +73,15 @@ func(app *application) showBlog(rw http.ResponseWriter, r *http.Request){
     }
 }
 
+//mexendo aqui hem
 func(app *application) createBlog(rw http.ResponseWriter, r *http.Request){
-  if r.Method != "POST"{
-    rw.Header().Set("Allow","POST")
-    app.clientError(rw, http.StatusMethodNotAllowed)
-    return
-  }
 
-  rw.Write([]byte("Criar novo blog"))
+  //Testando a partir daqui -> 04/06 kkakakak
+  	if r.Method == "GET" {
+		tmpl, _ := template.ParseFiles("./ui/html/editor.html")
+
+		tmpl.Execute(rw, "")
+		return
+	}
+
 }
