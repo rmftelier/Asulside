@@ -12,6 +12,9 @@ func (app *application) routes() *http.ServeMux{
       	mux.HandleFunc("/", app.home)
       	mux.HandleFunc("/blog", app.showBlog)
       	mux.HandleFunc("/editor", app.createBlog)
+        mux.HandleFunc("/about", app.about) //Adicionando dia 05/06 
+
+  
       	fileServer := http.FileServer(http.Dir("./ui/static/"))
       	mux.Handle("/static/", http.StripPrefix("/static", fileServer))
 

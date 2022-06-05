@@ -7,25 +7,7 @@
    background-position: center;
  }
  
- .banner-upload-btn{
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: rgba(0, 0, 0, 0.1);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
- }
- 
- .banner-upload-btn img{
-    width: 20px;
- }
- 
- .blog{
+.blog{
     width: 70vw;
     min-width: 400px;
     height: 100px;

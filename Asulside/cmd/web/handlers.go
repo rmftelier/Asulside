@@ -24,6 +24,7 @@ func(app *application) home(rw http.ResponseWriter, r *http.Request){
        "./ui/html/home.html",
        "./ui/html/editor.html",
        "./ui/html/blog.html",
+       "./ui/html/about.html",
   }
 
   ts, err := template.ParseFiles(files...)
@@ -58,6 +59,7 @@ func(app *application) showBlog(rw http.ResponseWriter, r *http.Request){
 		"./ui/html/blog.html",
 		"./ui/html/editor.html",
 		"./ui/html/home.html",
+    "./ui/html/about.html",
     }
 
     ts, err := template.ParseFiles(files...)
@@ -90,13 +92,18 @@ func(app *application) createBlog(rw http.ResponseWriter, r *http.Request){
 
 */
   
-
-  
-
 } 
 
+//Nova página adicionada
+func(app *application) about(rw http.ResponseWriter, r *http.Request){
+    	if r.Method == "GET" {
+		tmpl, _ := template.ParseFiles("./ui/html/about.html")
 
+		tmpl.Execute(rw, "")
+		return
+	}
 
+}
 
 
 
