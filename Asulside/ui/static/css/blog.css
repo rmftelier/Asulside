@@ -7,7 +7,7 @@
 .article, .title{
    min-height: auto;
    height: fit-content;
-   padding: 0 10px;
+   padding: 10 10 px;
    white-space: normal;
 }
 

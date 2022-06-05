@@ -9,37 +9,23 @@
     <link rel="stylesheet" href="../static/css/home.css">
     <link rel="stylesheet" href="../static/css/editor.css">
 
-    <link rel='shortcut icon' href='/static/img/favicon.ico' type='image/x-icon'>
+    <link rel='shortcut icon' href='../static/img/favicon.ico' type='image/x-icon'>
   
 </head>
 <body>
-
-   <!-- <div class="banner">
-       <input type="file" accept="image/*" id="banner-upload" hidden>
-       <label for="banner-upload" class="banner-upload-btn"><img src="../static/img/upload.png" alt="upload banner"></label>
-  </div>  -->
 
     <div class="blog">
         <textarea type="text" class="title" placeholder="Blog title..."></textarea>
         <textarea type="text" class="article" placeholder="Start writing here..."></textarea>
     </div>
 
+
+  <!--  Aqui está relacionada com a dúvida -->
     <div class="blog-options">
-        <button class="btn dark publish-btn">publish</button>
-        <input type="file" accept="image/*" id="image-upload" hidden>
-        <label for="image-upload" class="btn grey upload-btn">Upload Image</label>
+        <button class="btn dark publish-btn" formaction="../../pkg/models/mysql/blogs.go">publish</button>
     </div>
-
-
-
+  
+<script src="../static/js/editor.js"></script>
 
 </body>
 </html>
-
-
-
-<!--- Código antigo:
-
-
- 
- -->  

@@ -7,7 +7,6 @@ import (
 
 )
 
-
 type BlogModel struct{
      DB *sql.DB
 }
