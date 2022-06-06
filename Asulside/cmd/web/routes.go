@@ -1,5 +1,4 @@
 package main
-//PAREI NA AULA 16
 
 import "net/http"
 
@@ -13,9 +12,8 @@ func (app *application) routes() *http.ServeMux{
       	mux.HandleFunc("/blog", app.showBlog)
       	mux.HandleFunc("/editor", app.editor)
       	mux.HandleFunc("/criar", app.create)
-        //mux.HandleFunc("/about", app.about) //Adicionando dia 05/06 // tentar implementar depois um segundo 
-
-  
+        mux.HandleFunc("/about", app.about)
+ 
       	fileServer := http.FileServer(http.Dir("./ui/static/"))
       	mux.Handle("/static/", http.StripPrefix("/static", fileServer))
 

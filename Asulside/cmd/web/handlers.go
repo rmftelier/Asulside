@@ -98,3 +98,14 @@ func(app *application) create(rw http.ResponseWriter, r *http.Request){
 	http.Redirect(rw, r, fmt.Sprintf("/blog?id=%d", id), http.StatusSeeOther)
   
 } 
+
+// Rota para About
+func(app *application) about(rw http.ResponseWriter, r *http.Request){
+  
+    	if r.Method == "GET" {
+		tmpl, _ := template.ParseFiles("./ui/html/about.html")
+
+		tmpl.Execute(rw, "")
+		return
+	}
+}
