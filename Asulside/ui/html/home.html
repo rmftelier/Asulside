@@ -39,7 +39,7 @@
       {{range .}}
         <div class="blog-card">
             <h1 class="blog-title">{{.Title}}</h1>
-            <p class="blog-overview">{{.Article}}</p>
+            <div class="blog-overview">{{.Article}}</div>
             <a href="/blog?id={{.ID}}" class="btn dark">read</a>
         </div> 
         {{end}}

@@ -1,12 +1,12 @@
 .banner{
-   width: 100%;
-   height: 400px;
-   position: relative;
-   background: #e7e7e7;
-   background-size: cover;
-   background-position: center;
- }
- 
+    width: 100%;
+    height: 400px;
+    position: relative;
+    background: #e7e7e7;
+    background-size: cover;
+    background-position: center;
+}
+
 .blog{
     width: 70vw;
     min-width: 400px;
@@ -14,38 +14,38 @@
     display: block;
     margin: auto;
     padding: 50px 0;
- }
- 
- textarea::-webkit-scrollbar{
+}
+
+textarea::-webkit-scrollbar{
     width: 10px;
- }
- 
- textarea::-webkit-scrollbar-thumb{
+}
+
+textarea::-webkit-scrollbar-thumb{
     background: rgba(0, 0, 0, 0.1);
     border-radius: 10px;
- }
- 
- .title, 
- .article{
-     width: 100%;
-     min-height: 100px;
-     height: auto;
-     outline: none;
-     font-size: 50px;
-     font-weight: 600;
-     color: #2d2d2d;
-     resize: none;
-     border: none;
-     padding: 10px;
-     border-radius: 10px;
- }
- 
- .title::placeholder, 
- .article::placeholder{
+}
+
+.title,
+.article{
+    width: 100%;
+    min-height: 100px;
+    height: auto;
+    outline: none;
+    font-size: 50px;
+    font-weight: 600;
     color: #2d2d2d;
- }
- 
- .article{
+    resize: none;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.title::placeholder,
+.article::placeholder{
+    color: #2d2d2d;
+}
+
+.article{
     height: 500px;
     font-size: 20px;
     margin-top: 20px;
@@ -53,10 +53,9 @@
     font-weight: 500;
     padding-bottom: 100px;
     white-space: pre-wrap;
- 
- }
- 
- .blog-options{
+}
+
+.blog-options{
     position: fixed;
     bottom: 0;
     left: 0;
@@ -67,19 +66,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
- }
- 
- 
- .btn{
+    word-wrap: break-word;
+}
+
+.btn{
     border: none;
     outline: none;
     cursor: pointer;
- }
- 
- .btn.grey{
+}
+
+.btn.grey{
     background: #a5a5a5;
     color: #fff;
     margin-left: 20px;
     font-size: 14px;
- }
- 
+}

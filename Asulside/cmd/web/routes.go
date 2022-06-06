@@ -13,7 +13,7 @@ func (app *application) routes() *http.ServeMux{
       	mux.HandleFunc("/blog", app.showBlog)
       	mux.HandleFunc("/editor", app.editor)
       	mux.HandleFunc("/criar", app.create)
-        //mux.HandleFunc("/about", app.about) //Adicionando dia 05/06 
+        //mux.HandleFunc("/about", app.about) //Adicionando dia 05/06 // tentar implementar depois um segundo 
 
   
       	fileServer := http.FileServer(http.Dir("./ui/static/"))

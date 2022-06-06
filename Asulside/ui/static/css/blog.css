@@ -1,27 +1,27 @@
 .blog, .article{
-  position: relative;
-  height: fit-content;
-  padding-bottom: 0;
+    position: relative;
+    height: fit-content;
+    padding-bottom: 0;
 }
 
 .article, .title{
-   min-height: 1000px;
-   height: fit-content;
-   padding: 0 10 px;
-   white-space: normal;
+    min-height: auto;
+    height: fit-content;
+    padding: 0 10px;
+    white-space: normal;
 }
 
 .published{
-   margin: 20px 0 60px;
-  padding: 0 10px;
-  text-transform: capitalize;
-  font-style: italic;
-  color: rgba(0, 0, 0, 0.5);
+    margin: 20px 0 60px;
+    padding: 0 10px;
+    text-transform: capitalize;
+    font-style: italic;
+    color: rgba(0, 0, 0, 0.5);
 }
 
 .published span{
-  font-weight: 700;
-  font-style: normal;
+    font-weight: 700;
+    font-style: normal;
 }
 
 .article *{
@@ -30,9 +30,9 @@
 }
 
 .sub-heading{
-   padding: 0 5vw;
-   color: #2d2d2d;
-   font-weight: 500;
-   font-size: 40px;
-   margin-top: 80px;
+    padding: 0 5vw;
+    color: #2d2d2d;
+    font-weight: 500;
+    font-size: 40px;
+    margin-top: 80px;
 }
