@@ -27,10 +27,11 @@
   <div class="blog">
     <form action="/criar">
          <input type="text" name="title" class="title" placeholder="Blog title..."> <br>
-         <input type="text" name="article" class="article" placeholder="Start writing here..."> <br>     
+         <textarea type="text" name="article" class="article" rows="10" placeholder="Start writing here..."></textarea>
+          <br>     
       </div>
       <div class="blog-options">
-        <input type="submit" name="publish" class="btn dark publish-btn">
+        <button type="submit" name="publish" class="btn dark publish-btn">publish</button>
         </div>
    </form>
 
@@ -39,7 +40,11 @@
 
 
   
-  <!--  Aqui está relacionada com a dúvida  
+  <!--  Aqui está relacionada com a dúvida
+
+        <input type="submit" name="publish" class="btn dark publish-btn">
+
+  ---- 
     <div class="blog-options">
         <button class="btn dark publish-btn" formaction="../../pkg/models/mysql/blogs.go">publish</button>
     </div>  
