@@ -5,9 +5,7 @@ import(
     "time"
 )
 
-
 var ErrNoRecord = errors.New("models: no matching record Found")
-
 
 type Blog struct{
     ID int

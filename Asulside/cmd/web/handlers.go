@@ -9,6 +9,7 @@ import (
   "github.com/rmftelier/Asulside/pkg/models"
 )
 
+// ---- Página Principal ---- 
 func(app *application) home(rw http.ResponseWriter, r *http.Request){
   if r.URL.Path != "/"{
     app.notFound(rw)
@@ -39,6 +40,7 @@ func(app *application) home(rw http.ResponseWriter, r *http.Request){
   }
 }
 
+// ---- Blog ---- 
 func(app *application) showBlog(rw http.ResponseWriter, r *http.Request){
   id,err := strconv.Atoi(r.URL.Query().Get("id"))
   if err != nil || id < 1 {
@@ -73,7 +75,7 @@ func(app *application) showBlog(rw http.ResponseWriter, r *http.Request){
     }
 }
 
-//Rota exibindo o formulário - TESTE
+// ---- Editor ---- 
 func(app *application) editor(rw http.ResponseWriter, r *http.Request){
   
     	if r.Method == "GET" {
@@ -84,7 +86,7 @@ func(app *application) editor(rw http.ResponseWriter, r *http.Request){
 	}
 }
 
-//Submetendo o post
+// ---- Rota que envia os dados do formulário para o banco de dados ---- 
 func(app *application) create(rw http.ResponseWriter, r *http.Request){ 
   title := r.FormValue("title")
 	article := r.FormValue("article")
@@ -99,7 +101,7 @@ func(app *application) create(rw http.ResponseWriter, r *http.Request){
   
 } 
 
-// Rota para About
+// ---- Sobre ---- 
 func(app *application) about(rw http.ResponseWriter, r *http.Request){
   
     	if r.Method == "GET" {

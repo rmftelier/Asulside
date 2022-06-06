@@ -11,7 +11,6 @@ type BlogModel struct{
      DB *sql.DB
 }
 
-//Função para Inserir um Blog 
 func(m *BlogModel)Insert(title, article string) (int, error){
 
   stmt := `INSERT INTO blogs (title, article, publishedAt)
@@ -31,9 +30,6 @@ func(m *BlogModel)Insert(title, article string) (int, error){
   return int(id), nil
 } 
 
-
-
-//Função para Pegar um Blog específico 
 func(m *BlogModel) Get(id int)(*models.Blog, error){
     stmt := `SELECT id, title, article, publishedAt FROM blogs
   
@@ -54,7 +50,6 @@ func(m *BlogModel) Get(id int)(*models.Blog, error){
     return b, nil
 }
 
-//Função para pegar os últimos blogs postados
 func(m *BlogModel) Latest()([]*models.Blog, error){
     
   stmt := `SELECT id, title, article, publishedAt FROM blogs 
